@@ -8,6 +8,17 @@ button {
     margin-bottom: 30px;
 }
 
+input{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 70px;
+}
+
+#input {
+    margin-top: 10px;
+    text-align: center;
+}
+
 #buttons {
     text-align: center;
     margin-top: 5%;
@@ -17,3 +28,7 @@ button {
     margin-top: 10px;
     margin-left: 40%;
 }
+
+
+
+
