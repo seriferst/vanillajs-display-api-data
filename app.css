@@ -1,0 +1,19 @@
+body {
+    background: orange;
+}
+button {
+    background-color: #aee270;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+#buttons {
+    text-align: center;
+    margin-top: 5%;
+}
+
+#list {
+    margin-top: 10px;
+    margin-left: 40%;
+}
