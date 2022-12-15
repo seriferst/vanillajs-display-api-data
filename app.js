@@ -1,10 +1,10 @@
-const loadUserBtn = document.getElementById('load-users');
-const searchBox = document.getElementById('searchB');
-const USER_URL = "https://jsonplaceholder.typicode.com/users"
-var listElements;
-
+const loadUserBtn = document.getElementById('loadUsers');
+const searchBox = document.getElementById('search');
+let listElements;
 
 const loadUserNames = () => {
+    const USER_URL = "https://jsonplaceholder.typicode.com/users"; 
+
     fetch(USER_URL)
     .then(response =>response.json())
     .then(responseJson => {
@@ -13,14 +13,14 @@ const loadUserNames = () => {
      })
 }
 
-function renderNames(listElements){
-    const ulist = document.getElementById('ulist');
+function renderNames(listElements) {
+    const ulist = document.getElementById('uList');
     const listDiv = document.getElementById('list');
     ulist.innerHTML = "";
     
     for (let i=0; i < listElements.length; i ++){
         const userNames = document.createElement('li');
-        userNames.innerText = listElements[i].name;
+        userNames.innerText = listElements[i]?.name;
         ulist.appendChild(userNames);
     }
     listDiv.appendChild(ulist);
@@ -33,11 +33,8 @@ function searchName() {
 
 function findName() {
     let value = searchBox.value;
-    const filteredList = listElements.filter(n =>  n.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
-    console.log('filteredList:', filteredList);
+    const filteredList = listElements.filter(n =>  n?.name.toLowerCase().indexOf(value.toLowerCase()) > -1);
     renderNames(filteredList);
 }
 
-
-//alternative
 loadUserBtn.addEventListener('click' , () => { loadUserNames(); });
